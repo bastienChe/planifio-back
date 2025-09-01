@@ -14,4 +14,24 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public List<Customer> getCustomers() {
         return List.of();
     }
+
+    public CustomerEntity toCustomerEntity(Customer customer){
+        return new CustomerEntity(
+                customer.getId(),
+                customer.getFirstName(),
+                customer.getLastName(),
+                customer.getGender(),
+                customer.getBirthDate(),
+                customer.getEmail(),
+                customer.getPhone(),
+                customer.getAddress(),
+                customer.getRegistrationDate(),
+                customer.getLastPurchaseDate(),
+                customer.getOrderCount(),
+                customer.getTotalSpent(),
+                customer.isOptinNewsletter(),
+                customer.isOptinSms(),
+                customer.getRating()
+        );
+    }
 }
