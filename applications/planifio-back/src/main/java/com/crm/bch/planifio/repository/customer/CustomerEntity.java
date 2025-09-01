@@ -1,13 +1,18 @@
 package com.crm.bch.planifio.repository.customer;
 
+import com.crm.bch.planifio.core.customer.Customer;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Table(name = "REPORTING_DOMAINE")
+@Table(name = "CUSTOMER")
+@Getter
+@Setter
 @AllArgsConstructor
 public class CustomerEntity {
 
@@ -57,4 +62,45 @@ public class CustomerEntity {
     @Column(columnDefinition = "decimal(1,1)", nullable = false)
     private float rating;
 
+
+    public static CustomerEntity fromCustomer(Customer customer){
+        return new CustomerEntity(
+                customer.getId(),
+                customer.getFirstName(),
+                customer.getLastName(),
+                customer.getGender(),
+                customer.getBirthDate(),
+                customer.getEmail(),
+                customer.getPhone(),
+                customer.getAddress(),
+                customer.getRegistrationDate(),
+                customer.getLastPurchaseDate(),
+                customer.getOrderCount(),
+                customer.getTotalSpent(),
+                customer.isOptinNewsletter(),
+                customer.isOptinSms(),
+                customer.getRating()
+        );
+    }
+
+
+    public Customer toCustomer(){
+        return new Customer(
+                this.getId(),
+                this.getFirstName(),
+                this.getLastName(),
+                this.getGender(),
+                this.getBirthDate(),
+                this.getEmail(),
+                this.getPhone(),
+                this.getAddress(),
+                this.getRegistrationDate(),
+                this.getLastPurchaseDate(),
+                this.getOrderCount(),
+                this.getTotalSpent(),
+                this.isOptinNewsletter(),
+                this.isOptinSms(),
+                this.getRating()
+        );
+    }
 }
