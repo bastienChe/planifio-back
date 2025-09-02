@@ -48,7 +48,6 @@ public class CustomerController {
         try {
             customerDto.setId(id);
             Customer updatedCustomer = customerManager.updateCustomer(id, customerDto.toCustomer());
-            log.error(updatedCustomer.getId());
             return ResponseEntity.ok(CustomerDto.fromCustomer(updatedCustomer));
         } catch (CustomerNotFoundException e){
             return ResponseEntity.notFound().build();
