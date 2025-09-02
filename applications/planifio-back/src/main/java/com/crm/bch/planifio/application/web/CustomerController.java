@@ -4,12 +4,15 @@ import com.crm.bch.planifio.core.customer.Customer;
 import com.crm.bch.planifio.core.customer.CustomerManager;
 import com.crm.bch.planifio.core.customer.CustomerRepository;
 import com.crm.bch.planifio.core.customer.exceptions.CustomerNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
+@RequestMapping("")
 public class CustomerController {
 
     private CustomerManager customerManager;
@@ -41,15 +44,21 @@ public class CustomerController {
     }
 
     @PutMapping("/customer/{id}")
-    public CustomerDto updateCustomer(@PathVariable String id, @RequestBody CustomerDto customerDto) {
-        Customer customer = customerDto.toCustomer();
-        return customerManager.updateCustomer(id, customer);
+    public ResponseEntity<CustomerDto> updateCustomer(@PathVariable String id, @RequestBody CustomerDto customerDto) {
+        try {
+            customerDto.setId(id);
+            Customer updatedCustomer = customerManager.updateCustomer(id, customerDto.toCustomer());
+            log.error(updatedCustomer.getId());
+            return ResponseEntity.ok(CustomerDto.fromCustomer(updatedCustomer));
+        } catch (CustomerNotFoundException e){
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @DeleteMapping("/customer/{id}")
-    public CustomerDto removeCustomer(@PathVariable String id) {
-        Customer customer = customerManager.removeCustomer(id);
-        return CustomerDto.fromCustomer(customer);
+    public ResponseEntity<String> removeCustomer(@PathVariable String id) {
+        customerManager.deleteCustomer(id);
+        return ResponseEntity.ok("customer "+id+" removed");
     }
 
 }

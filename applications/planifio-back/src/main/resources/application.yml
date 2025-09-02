@@ -12,3 +12,7 @@ spring:
     properties:
       hibernate:
         show_sql: false
+server:
+  servlet:
+    context-path: '/planifio'
+  port: 8081

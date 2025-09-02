@@ -13,4 +13,8 @@ public interface CustomerRepository {
     Optional<Customer> getCustomer(String id);
 
     Customer createCustomer(Customer customer);
+
+    Customer updateCustomer(String id, Customer customer);
+
+    void deleteCustomer(String id);
 }

@@ -21,10 +21,17 @@ public class CustomerManager {
 
     public Customer getCustomer(String id) {
        return customerRepository.getCustomer(id).orElseThrow(() -> new CustomerNotFoundException(id));
-
     }
 
     public Customer createCustomer(Customer customer) {
         return customerRepository.createCustomer(customer);
+    }
+
+    public Customer updateCustomer(String id, Customer customer) {
+        return customerRepository.updateCustomer(id, customer);
+    }
+
+    public void deleteCustomer(String id) {
+        customerRepository.deleteCustomer(id);
     }
 }
