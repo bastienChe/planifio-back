@@ -2,6 +2,7 @@ package com.crm.bch.planifio.repository.customer;
 
 import com.crm.bch.planifio.core.customer.Customer;
 import com.crm.bch.planifio.core.customer.exceptions.CustomerNotFoundException;
+import com.crm.bch.planifio.repository.customer.entities.CustomerEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

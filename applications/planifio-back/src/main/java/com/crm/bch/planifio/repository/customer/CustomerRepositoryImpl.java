@@ -3,6 +3,7 @@ package com.crm.bch.planifio.repository.customer;
 import com.crm.bch.planifio.core.customer.Customer;
 import com.crm.bch.planifio.core.customer.CustomerRepository;
 import com.crm.bch.planifio.core.customer.exceptions.CustomerNotFoundException;
+import com.crm.bch.planifio.repository.customer.entities.CustomerEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;

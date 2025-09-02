@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.application.web;
+package com.crm.bch.planifio.application.web.dto;
 
 import com.crm.bch.planifio.core.customer.Customer;
 import lombok.*;

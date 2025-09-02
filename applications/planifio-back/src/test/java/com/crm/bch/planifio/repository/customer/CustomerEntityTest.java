@@ -1,6 +1,7 @@
 package com.crm.bch.planifio.repository.customer;
 
 import com.crm.bch.planifio.core.customer.Customer;
+import com.crm.bch.planifio.repository.customer.entities.CustomerEntity;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

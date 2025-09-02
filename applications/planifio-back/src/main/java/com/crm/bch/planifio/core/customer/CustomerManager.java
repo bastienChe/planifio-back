@@ -1,6 +1,5 @@
 package com.crm.bch.planifio.core.customer;
 
-import com.crm.bch.planifio.application.web.CustomerDto;
 import com.crm.bch.planifio.core.customer.exceptions.CustomerNotFoundException;
 import org.springframework.stereotype.Service;
 

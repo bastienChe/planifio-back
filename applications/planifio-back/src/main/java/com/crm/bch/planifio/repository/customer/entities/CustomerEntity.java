@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.repository.customer;
+package com.crm.bch.planifio.repository.customer.entities;
 
 import com.crm.bch.planifio.core.customer.Customer;
 import jakarta.persistence.Column;

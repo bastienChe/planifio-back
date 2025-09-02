@@ -1,6 +1,5 @@
 package com.crm.bch.planifio.core.customer;
 
-import com.crm.bch.planifio.application.web.CustomerDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

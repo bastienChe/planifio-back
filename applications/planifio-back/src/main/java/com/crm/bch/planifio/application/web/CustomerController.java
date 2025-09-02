@@ -1,5 +1,6 @@
 package com.crm.bch.planifio.application.web;
 
+import com.crm.bch.planifio.application.web.dto.CustomerDto;
 import com.crm.bch.planifio.core.customer.Customer;
 import com.crm.bch.planifio.core.customer.CustomerManager;
 import com.crm.bch.planifio.core.customer.CustomerRepository;
