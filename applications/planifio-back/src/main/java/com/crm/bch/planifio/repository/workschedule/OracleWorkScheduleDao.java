@@ -9,8 +9,9 @@ import java.util.List;
 
 public interface OracleWorkScheduleDao extends JpaRepository<WorkScheduleEntity, String> {
 
-    @Query("SELECT w FROM WorkScheduleEntity w WHERE w.weekNumber = :weekNum AND w.yearNumber = :yearNumber")
+    @Query("SELECT w FROM WorkScheduleEntity w WHERE w.employeeID = :employeeid AND w.weekNumber = :weekNum AND w.yearNumber = :yearNumber")
     List<WorkScheduleEntity> getWorkScheduleByWeekNum(
+            @Param("employeeid") String employeeid,
             @Param("yearNumber") int yearNumber,
             @Param("weekNum") int weekNum);
 }

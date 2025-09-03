@@ -13,7 +13,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("")
 public class WorkScheduleController {
 
     private WorkScheduleManager workScheduleManager;
@@ -22,13 +22,13 @@ public class WorkScheduleController {
         this.workScheduleManager = new WorkScheduleManager(workScheduleRepository);
     }
 
-    @GetMapping("/workSchedules")
+    @GetMapping("/workschedules")
     public ResponseEntity<List<WorkScheduleDto>> getWorkSchedules() {
         List<WorkSchedule> workSchedules = workScheduleManager.getWorkSchedules();
         return ResponseEntity.ok(workSchedules.stream().map(WorkScheduleDto::fromWorkSchedule).toList());
     }
 
-    @GetMapping("/workSchedule/{id}")
+    @GetMapping("/employee/workschedule/{id}")
     public ResponseEntity<WorkScheduleDto> getWorkSchedule(@PathVariable String id) {
         try {
             WorkSchedule workSchedule = workScheduleManager.getWorkSchedule(id);
@@ -38,23 +38,23 @@ public class WorkScheduleController {
         }
     }
 
-    @GetMapping("/workSchedule/year/{yearnum}/week/{weeknum}")
-    public ResponseEntity<List<WorkScheduleDto>> getWorkSchedule(@PathVariable int yearnum, @PathVariable int weeknum) {
+    @GetMapping("/employee/{employeeid}/workschedule/year/{yearnum}/week/{weeknum}")
+    public ResponseEntity<List<WorkScheduleDto>> getWorkSchedule(@PathVariable String employeeid, @PathVariable int yearnum, @PathVariable int weeknum) {
         try {
-            List<WorkSchedule> workSchedule = workScheduleManager.getWorkScheduleByWeekNum(yearnum, weeknum);
+            List<WorkSchedule> workSchedule = workScheduleManager.getWorkScheduleByEmployeeAndWeekNum(employeeid, yearnum, weeknum);
             return ResponseEntity.ok(workSchedule.stream().map(WorkScheduleDto::fromWorkSchedule).toList());
         } catch (WorkScheduleNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
     }
 
-    @PostMapping("/workSchedule")
+    @PostMapping("/workschedule")
     public ResponseEntity<WorkScheduleDto> setWorkSchedule(@RequestBody WorkScheduleDto workScheduleDto) {
         WorkSchedule createdWorkSchedule = workScheduleManager.createWorkSchedule(workScheduleDto.toWorkSchedule());
         return ResponseEntity.ok(WorkScheduleDto.fromWorkSchedule(createdWorkSchedule));
     }
 
-    @PutMapping("/workSchedule/{id}")
+    @PutMapping("/workschedule/{id}")
     public ResponseEntity<WorkScheduleDto> updateWorkSchedule(@PathVariable String id, @RequestBody WorkScheduleDto workScheduleDto) {
         try {
             workScheduleDto.setId(id);
@@ -65,7 +65,7 @@ public class WorkScheduleController {
         }
     }
 
-    @DeleteMapping("/workSchedule/{id}")
+    @DeleteMapping("/workschedule/{id}")
     public ResponseEntity<String> removeWorkSchedule(@PathVariable String id) {
         workScheduleManager.deleteWorkSchedule(id);
         return ResponseEntity.ok("workSchedule "+id+" removed");
