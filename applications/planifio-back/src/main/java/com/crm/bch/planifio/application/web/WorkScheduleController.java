@@ -38,6 +38,16 @@ public class WorkScheduleController {
         }
     }
 
+    @GetMapping("/workSchedule/year/{yearnum}/week/{weeknum}")
+    public ResponseEntity<List<WorkScheduleDto>> getWorkSchedule(@PathVariable int yearnum, @PathVariable int weeknum) {
+        try {
+            List<WorkSchedule> workSchedule = workScheduleManager.getWorkScheduleByWeekNum(yearnum, weeknum);
+            return ResponseEntity.ok(workSchedule.stream().map(WorkScheduleDto::fromWorkSchedule).toList());
+        } catch (WorkScheduleNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @PostMapping("/workSchedule")
     public ResponseEntity<WorkScheduleDto> setWorkSchedule(@RequestBody WorkScheduleDto workScheduleDto) {
         WorkSchedule createdWorkSchedule = workScheduleManager.createWorkSchedule(workScheduleDto.toWorkSchedule());

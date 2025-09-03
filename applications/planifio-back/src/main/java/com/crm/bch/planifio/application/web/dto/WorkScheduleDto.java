@@ -17,6 +17,8 @@ public class WorkScheduleDto {
     private LocalTime endTime;
     private Day day;
     private String employeeID;
+    private int weekNumber;
+    private int yearNumber;
 
     public WorkSchedule toWorkSchedule() {
         return new WorkSchedule(
@@ -24,7 +26,9 @@ public class WorkScheduleDto {
             this.getStartTime(),
             this.getEndTime(),
             this.getDay(),
-            this.getEmployeeID()
+            this.getEmployeeID(),
+            this.getWeekNumber(),
+            this.getYearNumber()
         );
     }
 
@@ -34,7 +38,9 @@ public class WorkScheduleDto {
             workSchedule.getStartTime(),
             workSchedule.getEndTime(),
             workSchedule.getDay(),
-            workSchedule.getEmployeeID()
+            workSchedule.getEmployeeID(),
+            workSchedule.getWeekNumber(),
+            workSchedule.getYearNumber()
         );
     }
 

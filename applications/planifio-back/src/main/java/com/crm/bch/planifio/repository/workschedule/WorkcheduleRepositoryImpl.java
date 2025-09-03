@@ -34,6 +34,11 @@ public class WorkcheduleRepositoryImpl implements WorkScheduleRepository {
     }
 
     @Override
+    public List<WorkSchedule> getWorkScheduleByWeekNum(int yearNumber, int weekNum) {
+        return dao.getWorkScheduleByWeekNum(yearNumber, weekNum).stream().map(WorkScheduleAdapter::toWorkSchedule).toList();
+    }
+
+    @Override
     public WorkSchedule createWorkSchedule(WorkSchedule workSchedule) {
         workSchedule.setId(java.util.UUID.randomUUID().toString());
         WorkScheduleEntity workScheduleEntity = dao.save(WorkScheduleAdapter.fromWorkSchedule(workSchedule));

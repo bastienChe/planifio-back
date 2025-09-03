@@ -18,5 +18,7 @@ public class WorkSchedule {
     private LocalTime endTime;
     private Day day;
     private String employeeID;
+    private int weekNumber;
+    private int yearNumber;
 
 }

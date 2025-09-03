@@ -28,11 +28,17 @@ public class WorkScheduleEntity {
     @Column(name = "end_time", columnDefinition = "VARCHAR2(5)")
     private String endTimeStr;
 
-    @Column(columnDefinition = "integer", nullable = false)
+    @Column(name = "day_of_week", columnDefinition = "integer", nullable = false)
     private int day;
 
-    @Column(columnDefinition = "varchar2(36)", nullable = false)
+    @Column(name = "employee_id", columnDefinition = "varchar2(36)", nullable = false)
     private String employeeID;
+
+    @Column(name = "week_number", columnDefinition = "integer", nullable = false)
+    private int weekNumber;
+
+    @Column(name = "year_number", columnDefinition = "integer", nullable = false)
+    private int yearNumber;
 
     @Transient
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");

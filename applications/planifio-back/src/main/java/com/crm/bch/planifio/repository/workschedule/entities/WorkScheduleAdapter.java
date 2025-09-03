@@ -22,7 +22,9 @@ public class WorkScheduleAdapter {
                 startTimeStr,
                 endTimeStr,
                 workSchedule.getDay().getValue(),
-                workSchedule.getEmployeeID()
+                workSchedule.getEmployeeID(),
+                workSchedule.getWeekNumber(),
+                workSchedule.getYearNumber()
         );
     }
 
@@ -40,6 +42,8 @@ public class WorkScheduleAdapter {
         workSchedule.setEndTime(endTime);
         workSchedule.setDay(Day.fromInt(entity.getDay())); // day est un int
         workSchedule.setEmployeeID(entity.getEmployeeID());
+        workSchedule.setWeekNumber(entity.getWeekNumber());
+        workSchedule.setYearNumber(entity.getYearNumber());
 
         return workSchedule;
     }

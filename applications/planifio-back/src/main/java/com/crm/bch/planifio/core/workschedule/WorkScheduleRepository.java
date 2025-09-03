@@ -16,4 +16,6 @@ public interface WorkScheduleRepository {
     WorkSchedule updateWorkSchedule(String id, WorkSchedule workSchedule);
 
     void deleteWorkSchedule(String id);
+
+    List<WorkSchedule> getWorkScheduleByWeekNum(int yearNumber, int weekNum);
 }

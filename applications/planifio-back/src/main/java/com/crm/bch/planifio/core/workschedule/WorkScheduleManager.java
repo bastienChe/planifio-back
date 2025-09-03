@@ -33,4 +33,8 @@ public class WorkScheduleManager {
     public void deleteWorkSchedule(String id) {
         workScheduleRepository.deleteWorkSchedule(id);
     }
+
+    public List<WorkSchedule> getWorkScheduleByWeekNum(int year, int weekNum) {
+        return workScheduleRepository.getWorkScheduleByWeekNum(year, weekNum);
+    }
 }
