@@ -16,9 +16,9 @@ import java.util.Optional;
 @Repository
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
-    private final OracleEmployeeDao dao;
+    private final EmployeeDao dao;
 
-    public EmployeeRepositoryImpl(OracleEmployeeDao dao) {
+    public EmployeeRepositoryImpl(EmployeeDao dao) {
         this.dao = dao;
     }
 
