@@ -16,9 +16,9 @@ import java.util.Optional;
 @Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
-    private final OracleCustomerDao dao;
+    private final CustomerDao dao;
 
-    public CustomerRepositoryImpl(OracleCustomerDao dao) {
+    public CustomerRepositoryImpl(CustomerDao dao) {
         this.dao = dao;
     }
 

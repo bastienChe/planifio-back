@@ -18,7 +18,7 @@ import static org.mockito.Mockito.*;
 public class CustomerRepositoryImplTest {
 
     @Mock
-    private OracleCustomerDao dao;
+    private CustomerDao dao;
 
     private CustomerRepositoryImpl repository;
 
