@@ -1,12 +1,16 @@
 package com.crm.bch.planifio.repository.workschedule;
 
 import com.crm.bch.planifio.repository.workschedule.entities.WorkScheduleEntity;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
+@Primary
+@Profile("prod")
 public class OracleWorkScheduleDaoAdapter implements WorkScheduleDao {
 
     private final OracleWorkScheduleDao jpaDao;

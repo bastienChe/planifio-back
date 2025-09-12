@@ -2,6 +2,7 @@ package com.crm.bch.planifio.repository.employee;
 
 
 import com.crm.bch.planifio.repository.employee.entities.EmployeeEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +10,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
+@Slf4j
 @Profile("dev")
 public class InMemoryEmployeeDao implements EmployeeDao {
 
@@ -16,6 +18,7 @@ public class InMemoryEmployeeDao implements EmployeeDao {
 
     public InMemoryEmployeeDao() {
         // Jeu de données par défaut
+        log.error("InMemoryEmployeeDao");
         save(new EmployeeEntity("1", "Hugo", "Dubois", "0612345678", "hugo.dubois@example.com", "COMP1"));
         save(new EmployeeEntity("2", "Alice", "Martin", "0623456789", "alice.martin@example.com", "COMP1"));
         save(new EmployeeEntity("3", "Lucas", "Bernard", "0634567890", "lucas.bernard@example.com", "COMP2"));

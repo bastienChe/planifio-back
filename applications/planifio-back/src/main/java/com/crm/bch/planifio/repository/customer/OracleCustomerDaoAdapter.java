@@ -2,12 +2,16 @@ package com.crm.bch.planifio.repository.customer;
 
 
 import com.crm.bch.planifio.repository.customer.entities.CustomerEntity;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
+@Primary
+@Profile("prod")
 public class OracleCustomerDaoAdapter implements CustomerDao {
 
     private final OracleCustomerDao jpaDao;
