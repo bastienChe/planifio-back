@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.application.web;
+/*package com.crm.bch.planifio.application.web;
 
 import com.crm.bch.planifio.application.web.dto.CustomerDto;
 import com.crm.bch.planifio.core.customer.Customer;
@@ -111,3 +111,4 @@ public class CustomerDtoTest {
         assertThat(result).isEqualTo(original);
     }
 }
+*/

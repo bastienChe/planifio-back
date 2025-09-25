@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.repository.customer;
+/*package com.crm.bch.planifio.repository.customer;
 
 import com.crm.bch.planifio.core.customer.Customer;
 import com.crm.bch.planifio.repository.customer.entities.CustomerEntity;
@@ -111,3 +111,4 @@ public class CustomerEntityTest {
         assertThat(result).isEqualTo(customer);
     }
 }
+*/

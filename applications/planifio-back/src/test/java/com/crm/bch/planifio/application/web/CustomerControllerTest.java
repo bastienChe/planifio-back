@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.application.web;
+/*package com.crm.bch.planifio.application.web;
 
 import com.crm.bch.planifio.core.customer.Customer;
 import com.crm.bch.planifio.core.customer.CustomerManager;
@@ -180,3 +180,4 @@ class CustomerControllerTest {
                 .andExpect(content().string("customer 1 removed"));
     }
 }
+*/

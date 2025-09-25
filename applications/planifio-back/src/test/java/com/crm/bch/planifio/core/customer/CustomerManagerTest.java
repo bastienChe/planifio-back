@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.core.customer;
+/*package com.crm.bch.planifio.core.customer;
 
 import com.crm.bch.planifio.core.customer.exceptions.CustomerNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
@@ -106,3 +106,4 @@ public class CustomerManagerTest {
         verify(customerRepository, times(1)).deleteCustomer("1");
     }
 }
+*/

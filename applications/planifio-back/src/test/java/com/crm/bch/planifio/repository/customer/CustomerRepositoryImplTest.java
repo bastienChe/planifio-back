@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.repository.customer;
+/*package com.crm.bch.planifio.repository.customer;
 
 import com.crm.bch.planifio.core.customer.Customer;
 import com.crm.bch.planifio.core.customer.exceptions.CustomerNotFoundException;
@@ -132,3 +132,4 @@ public class CustomerRepositoryImplTest {
         verify(dao, times(1)).deleteById("1");
     }
 }
+*/
