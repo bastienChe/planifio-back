@@ -1,7 +1,11 @@
 TODO : 
-Back Exception Appointment quand l'employé a déjà un rdv
-Front Page Appointment en fonction des RDV existants
-Front planning actualisé quand on fait un appointment
+- Back Exception Appointment quand l'employé a déjà un rdv
+- Front Page Appointment en fonction des RDV existants
+- Front planning actualisé quand on fait un appointment
+- Back Les companyServices doivent être de timeslots (15 min, 30 min ...) spécifiques ET doivent positionner cette durée chez l'employé
+- Front lier les companyServices au back angular
+- Ajouter tout un controller / repository pour les companyServices
+- Front Filtrer les timeslots
 
 Question : On a vraiment besoin d'une table d'appointments ?? On peut pas avoir ça dans la DB EmployeePlanning ?
 

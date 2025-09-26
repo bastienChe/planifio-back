@@ -1,4 +1,4 @@
-package com.crm.bch.planifio.config;
+package com.crm.bch.planifio;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
