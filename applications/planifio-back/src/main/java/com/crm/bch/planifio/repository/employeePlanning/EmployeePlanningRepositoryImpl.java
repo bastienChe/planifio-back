@@ -2,6 +2,7 @@ package com.crm.bch.planifio.repository.employeePlanning;
 
 import com.crm.bch.planifio.core.employeePlanning.EmployeePlanning;
 import com.crm.bch.planifio.core.employeePlanning.EmployeePlanningRepository;
+import com.crm.bch.planifio.repository.employeePlanning.entities.EmployeePlanningEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -20,7 +21,7 @@ public class EmployeePlanningRepositoryImpl implements EmployeePlanningRepositor
     }
 
     @Override
-    public List<EmployeePlanning> getEmployeeWeekPlanning(String employeeId, int weekNumber, int yearNumber) {
-        return List.of();
+    public List<EmployeePlanning> findEmployeePlanningByWeek(String employeeId, int weekNumber, int yearNumber) {
+        return dao.findEmployeePlanningByWeek(employeeId, weekNumber, yearNumber).stream().map(EmployeePlanningEntity::toEmployeePlanning).toList();
     }
 }

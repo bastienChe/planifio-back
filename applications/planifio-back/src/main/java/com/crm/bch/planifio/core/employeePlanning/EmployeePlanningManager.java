@@ -13,7 +13,7 @@ public class EmployeePlanningManager {
         this.employeePlanningRepository = employeeRepository;
     }
 
-    public List<EmployeePlanning> getEmployeeWeekPlanning(String employeeId, int weekNumber, int yearNumber) {
-        return employeePlanningRepository.getEmployeeWeekPlanning(employeeId, weekNumber, yearNumber);
+    public List<EmployeePlanning> findEmployeePlanningByWeek(String employeeId, int weekNumber, int yearNumber) {
+        return employeePlanningRepository.findEmployeePlanningByWeek(employeeId, weekNumber, yearNumber);
     }
 }

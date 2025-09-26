@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface EmployeePlanningRepository {
-    List<EmployeePlanning> getEmployeeWeekPlanning(String employeeId, int weekNumber, int yearNumber);
+    List<EmployeePlanning> findEmployeePlanningByWeek(String employeeId, int weekNumber, int yearNumber);
 
 }

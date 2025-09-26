@@ -22,9 +22,9 @@ public class EmployeePlanningController {
         this.employeePlanningManager = new EmployeePlanningManager(employeePlanningRepository);
     }
 
-    @GetMapping("/employee/{id}/planning/year/{yearNumber}/week/{weekNumber}")
-    public ResponseEntity<List<EmployeePlanningDto>> getEmployeeWeekPlanning(String employeeId, int weekNumber, int yearNumber) {
-        List<EmployeePlanning> employeePlanning = employeePlanningManager.getEmployeeWeekPlanning(employeeId, weekNumber, yearNumber);
+    @GetMapping("/employee/{employeeId}/planning/year/{yearNumber}/week/{weekNumber}")
+    public ResponseEntity<List<EmployeePlanningDto>> findEmployeePlanningByWeek(@PathVariable String employeeId, @PathVariable int weekNumber, @PathVariable int yearNumber) {
+        List<EmployeePlanning> employeePlanning = employeePlanningManager.findEmployeePlanningByWeek(employeeId, weekNumber, yearNumber);
         return ResponseEntity.ok(employeePlanning.stream().map(EmployeePlanningDto::fromEmployeePlanning).toList());
     }
 
