@@ -24,4 +24,9 @@ public class EmployeePlanningRepositoryImpl implements EmployeePlanningRepositor
     public List<EmployeePlanning> findEmployeePlanningByWeek(String employeeId, int weekNumber, int yearNumber) {
         return dao.findEmployeePlanningByWeek(employeeId, weekNumber, yearNumber).stream().map(EmployeePlanningEntity::toEmployeePlanning).toList();
     }
+
+    @Override
+    public EmployeePlanning setAppointment(EmployeePlanningEntity employeePlanningEntity) {
+        return dao.setAppointment(employeePlanningEntity).toEmployeePlanning();
+    }
 }

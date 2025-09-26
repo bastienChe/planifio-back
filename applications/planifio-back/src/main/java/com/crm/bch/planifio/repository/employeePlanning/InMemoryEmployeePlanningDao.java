@@ -1,12 +1,10 @@
 package com.crm.bch.planifio.repository.employeePlanning;
 
 
-import com.crm.bch.planifio.core.employeePlanning.EmployeePlanning;
 import com.crm.bch.planifio.repository.employeePlanning.entities.EmployeePlanningEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -48,6 +46,13 @@ public class InMemoryEmployeePlanningDao implements EmployeePlanningDao {
                 .filter(e -> e.getEmployeeId().equals(employeeId))
                 .toList();
         return employeePlanningByWeek;
+    }
+
+    @Override
+    public EmployeePlanningEntity setAppointment(EmployeePlanningEntity employeePlanningEntity) {
+        String nextval = String.valueOf(this.store.size());
+        this.store.put(nextval, employeePlanningEntity);
+        return this.store.get(nextval);
     }
 
     private int getActualWeek() {

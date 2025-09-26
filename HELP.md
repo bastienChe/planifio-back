@@ -1,3 +1,10 @@
+TODO : 
+Back Exception Appointment quand l'employé a déjà un rdv
+Front Page Appointment en fonction des RDV existants
+Front planning actualisé quand on fait un appointment
+
+Question : On a vraiment besoin d'une table d'appointments ?? On peut pas avoir ça dans la DB EmployeePlanning ?
+
 # Getting Started
 
 ### Reference Documentation

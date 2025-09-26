@@ -1,7 +1,9 @@
 package com.crm.bch.planifio.application.web;
 
 
+import com.crm.bch.planifio.application.web.dto.AppointmentDto;
 import com.crm.bch.planifio.application.web.dto.EmployeePlanningDto;
+import com.crm.bch.planifio.core.appointment.Appointment;
 import com.crm.bch.planifio.core.employeePlanning.EmployeePlanning;
 import com.crm.bch.planifio.core.employeePlanning.EmployeePlanningManager;
 import com.crm.bch.planifio.core.employeePlanning.EmployeePlanningRepository;
@@ -26,6 +28,12 @@ public class EmployeePlanningController {
     public ResponseEntity<List<EmployeePlanningDto>> findEmployeePlanningByWeek(@PathVariable String employeeId, @PathVariable int weekNumber, @PathVariable int yearNumber) {
         List<EmployeePlanning> employeePlanning = employeePlanningManager.findEmployeePlanningByWeek(employeeId, weekNumber, yearNumber);
         return ResponseEntity.ok(employeePlanning.stream().map(EmployeePlanningDto::fromEmployeePlanning).toList());
+    }
+
+    @PostMapping("/take-appointment")
+    public ResponseEntity<EmployeePlanningDto> setAppointment(@RequestBody EmployeePlanningDto appointment) {
+        EmployeePlanning createdAppointment = employeePlanningManager.setAppointment(appointment.toEmployeePlanning());
+        return ResponseEntity.ok(EmployeePlanningDto.fromEmployeePlanning(createdAppointment));
     }
 
 }

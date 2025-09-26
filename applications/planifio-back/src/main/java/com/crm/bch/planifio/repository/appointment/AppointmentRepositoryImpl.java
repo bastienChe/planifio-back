@@ -3,6 +3,7 @@ package com.crm.bch.planifio.repository.appointment;
 import com.crm.bch.planifio.core.appointment.Appointment;
 import com.crm.bch.planifio.core.appointment.AppointmentRepository;
 import com.crm.bch.planifio.repository.appointment.entities.AppointmentAdapter;
+import com.crm.bch.planifio.repository.employeePlanning.EmployeePlanningDao;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;

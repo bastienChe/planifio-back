@@ -1,6 +1,7 @@
 package com.crm.bch.planifio.repository.employeePlanning;
 
 
+import com.crm.bch.planifio.core.employeePlanning.EmployeePlanning;
 import com.crm.bch.planifio.repository.employeePlanning.entities.EmployeePlanningEntity;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
@@ -22,5 +23,10 @@ public class OracleEmployeePlanningDaoAdapter implements EmployeePlanningDao {
     @Override
     public List<EmployeePlanningEntity> findEmployeePlanningByWeek(String employeeId, int weekNumber, int yearNumber) {
         return List.of();
+    }
+
+    @Override
+    public EmployeePlanningEntity setAppointment(EmployeePlanningEntity employeePlanningEntity) {
+        return null;
     }
 }
